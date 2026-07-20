@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Lock, Mail, ArrowRight, ShieldCheck, Power, CheckSquare, Square } from 'lucide-react';
+import { Lock, Mail, ArrowRight } from 'lucide-react';
 import { apiFetch, setAuthToken } from '../services/api';
 import { User } from '../types';
 
@@ -8,8 +8,8 @@ interface AuthModalProps {
 }
 
 export const AuthModal: React.FC<AuthModalProps> = ({ onLoginSuccess }) => {
-  const [email, setEmail] = useState('admin@synccloud.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(true);
   const [openAtLogin, setOpenAtLogin] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -61,11 +61,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onLoginSuccess }) => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleQuickPreset = (presetEmail: string, presetPass: string) => {
-    setEmail(presetEmail);
-    setPassword(presetPass);
   };
 
   return (
@@ -146,28 +141,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onLoginSuccess }) => {
             {loading ? 'Autenticando...' : 'Entrar no Sistema'} <ArrowRight size={16} />
           </button>
         </form>
-
-        <div style={styles.presetsBox}>
-          <span style={styles.presetsTitle}>
-            <ShieldCheck size={14} color="#0078D4" /> Credenciais Demonstrativas:
-          </span>
-          <div style={styles.presetsButtons}>
-            <button
-              className="btn"
-              onClick={() => handleQuickPreset('admin@synccloud.com', 'admin123')}
-              style={{ fontSize: '11px', padding: '4px 8px' }}
-            >
-              Admin (admin@synccloud.com)
-            </button>
-            <button
-              className="btn"
-              onClick={() => handleQuickPreset('user@synccloud.com', 'user123')}
-              style={{ fontSize: '11px', padding: '4px 8px' }}
-            >
-              Usuário (user@synccloud.com)
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -290,25 +263,5 @@ const styles: Record<string, React.CSSProperties> = {
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-  },
-  presetsBox: {
-    marginTop: '18px',
-    paddingTop: '14px',
-    borderTop: '1px solid var(--border-color)',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '8px',
-  },
-  presetsTitle: {
-    fontSize: '11px',
-    color: 'var(--text-muted)',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-  },
-  presetsButtons: {
-    display: 'flex',
-    gap: '6px',
-    flexWrap: 'wrap',
   },
 };
