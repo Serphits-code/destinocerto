@@ -1,0 +1,122 @@
+:root {
+  --bg-app: #181818;
+  --bg-sidebar: #1F1F1F;
+  --bg-main: #272727;
+  --bg-card: #323232;
+  --bg-card-hover: #3D3D3D;
+  --bg-input: #2D2D2D;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-hover: rgba(255, 255, 255, 0.16);
+  --accent-blue: #0078D4;
+  --accent-blue-hover: #1086E8;
+  --accent-pill: #0078D4;
+  --text-primary: #FFFFFF;
+  --text-secondary: #ADADAD;
+  --text-muted: #848484;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --font-family: 'Segoe UI Variable Text', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --shadow-fluent: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Staggered Screen Construction Animation */
+@keyframes staggeredFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-1 {
+  animation: staggeredFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+}
+
+.stagger-2 {
+  animation: staggeredFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+.stagger-3 {
+  animation: staggeredFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Utility UI components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.btn:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-color-hover);
+}
+
+.btn-primary {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-blue-hover);
+}
+
+.btn-danger {
+  background-color: rgba(218, 54, 51, 0.12);
+  color: #FF6B6B;
+  border-color: rgba(218, 54, 51, 0.25);
+}
+
+.btn-danger:hover {
+  background-color: rgba(218, 54, 51, 0.25);
+}

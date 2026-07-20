@@ -1,0 +1,25 @@
+{
+  "name": "synccloud-deduplication-system",
+  "version": "1.0.0",
+  "description": "SyncCloud Deduplication System - Real-time file sync with SHA-256 deduplication, Web Panel & Electron Desktop",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:web": "npm --prefix frontend-web run dev",
+    "dev:desktop": "npm --prefix desktop-app run dev",
+    "build:backend": "npm --prefix backend run build",
+    "build:web": "npm --prefix frontend-web run build",
+    "build:desktop": "npm --prefix desktop-app run build",
+    "test:backend": "npm --prefix backend run test"
+  },
+  "keywords": [
+    "deduplication",
+    "sync",
+    "electron",
+    "react",
+    "express",
+    "sha256",
+    "vps"
+  ],
+  "author": "Almeida Studios",
+  "license": "MIT"
+}

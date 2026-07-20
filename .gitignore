@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local Desktop App (Kept local for building .exe installer)
+desktop-app/
+
+# Builds
+dist/
+build/
+out/
+
+# Database & Uploaded Storage
+*.db
+*.db-journal
+*.sqlite
+backend/storage/objects/*
+!backend/storage/objects/.gitkeep
+backend/sync_cloud.db
+
+# Desktop local sync build files
+desktop-app/sync_config.json
+desktop-app/dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
